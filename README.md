@@ -3,7 +3,7 @@ tiny-fx
 
 PHP Framework - Flyweight, Robust, Scalable
 
-This framework is very small and minimalistic, therefore it is extremely fast and scalale. With only 123 procedural lines of code as the core, it is very easy to get ones head around this paradigm and start developing in just few minutes. And the paradigm is Modular and Minimalistic. In essence, this framework aims to be the smallest of its kind that serves the whole purpose. It is good for solutions where a large number of requests can be expected.
+This framework is very small and minimalistic, therefore it is extremely fast and scalable. With only 123 procedural lines of code as the core, it is very easy to get ones head around this paradigm and start developing in just few minutes. And the paradigm is Modular and Minimalistic. In essence, this framework aims to be the smallest of its kind that serves the whole purpose. It is good for solutions where a large number of requests can be expected.
 
 Modular web apps can be built on this. This framework itself is NOT object oriented, but highly modular. Application developer has the liberty to make each module procedural, modular or object oriented.
 
