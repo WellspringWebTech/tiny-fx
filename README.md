@@ -25,13 +25,22 @@ i.e: $template_file = "admin.php";
 Interfaces are some libraries to make development easier. To send an Email, Connect to a database, zip some files, resize images there are interfaces. You can simply include these files inside methods and use their functions. These are documented inside each one. You can contribute by writing more of these.
 
 ==Database Abstraction==
-Database abstraction is carried out by an object oriented interface [module]. First you have to do this:
-$db = connent
+Database abstraction is carried out by an object oriented interface [module]. Set database credentials in config.php
+First you have to do this:
+$db = connect_database();
+
 After that you can do these things:
+$db->query('SELECT * FROM messages WHERE userid = 3');
+$db->insert('table_name', array('column' => 'value', 'id' => 4), 'userid = 3');
+$db->update('table_name', array('column' => 'value', 'id' => 4));
+
+In insert and update, if the primary key is 'id', the framework takes care of it all. You don't have to worry about where clause at all.
+
+You don't have to include a file for this. The interface is included after you call this function. Calling this function again will only return a pointer to the same object (singleton). But, if you want to connect to another database on the same server with same credentials, pass the database name as the first parameter to the same function. This will return a new object for database connection to the second database. So, basically you can connect to several databases at the same time.
 
 ==Sending Email==
 There is an interface for that.! Include 'interfaces/email.php' then call send_email($to, $data, $template, $subject, $attachments) . $data should be an associative array, the sort of you should return from a method. The $template is the view which is rendered against $data.
 
 ==Making image thumbnails, or resize==
-There is an interface for that too.! Include 'interfaces/'
+There is an interface for that too.! Include 'interfaces/image_magic.php'. Resize or make thumbnails without worrying about cropping and preserving the ratio. Just tell the required size, this will crop as necessory and resize it nicely.
 
